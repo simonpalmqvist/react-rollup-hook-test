@@ -24,7 +24,12 @@ export default {
 			include: ["node_modules/**"],
 			exclude: ["node_modules/process-es6/**"],
 			namedExports: {
-				"node_modules/react/index.js": ["useState", "useContext"]
+				"node_modules/react/index.js": [
+					"useState",
+					"useContext",
+					"useMemo",
+					"memo"
+				]
 			}
 		}),
 		babel({
