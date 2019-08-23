@@ -1,10 +1,10 @@
 import { withContext } from '../ooh'
-import { NameContext } from '../stores/nameStore'
+import { ItemContext } from '../stores/itemStore'
 
 import View2 from '../components/View2'
 
-const mapStateToProps = ({ quote }) => ({
-  quote
+const mapStateToProps = ({ item }) => ({
+  item
 })
 
-export default withContext(NameContext, mapStateToProps)(View2)
+export default withContext(ItemContext, mapStateToProps)(View2)

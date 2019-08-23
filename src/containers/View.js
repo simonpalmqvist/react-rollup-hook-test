@@ -1,11 +1,12 @@
 import { withContext } from '../ooh'
-import { NameContext } from '../stores/nameStore'
+import { ItemContext } from '../stores/itemStore'
 
 import View from '../components/View'
 
-const mapStateToProps = ({ name, setName }) => ({
-  name,
-  setName
+const mapStateToProps = ({ list, addItem, pickItem }) => ({
+  list,
+  addItem,
+  pickItem
 })
 
-export default withContext(NameContext, mapStateToProps)(View)
+export default withContext(ItemContext, mapStateToProps)(View)
