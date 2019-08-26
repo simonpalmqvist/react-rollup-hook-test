@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import { NameProvider } from './stores/nameStore'
 import { ItemProvider } from './stores/itemStore'
 
-import Header from './components/Header'
+import Header from './containers/Header'
 import View from './containers/View'
 import View2 from './containers/View2'
 

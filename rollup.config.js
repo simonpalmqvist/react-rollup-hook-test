@@ -26,6 +26,7 @@ export default {
       namedExports: {
         'node_modules/react/index.js': [
           'useState',
+          'useEffect',
           'useCallback',
           'useContext',
           'useMemo',
@@ -34,6 +35,8 @@ export default {
       }
     }),
     babel({
+      runtimeHelpers: true,
+      plugins: ['@babel/plugin-transform-runtime'],
       // plugins: ["transform-react-remove-prop-types"],
       exclude: 'node_modules/**'
     }),

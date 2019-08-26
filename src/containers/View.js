@@ -3,10 +3,11 @@ import { ItemContext } from '../stores/itemStore'
 
 import View from '../components/View'
 
-const mapStateToProps = ({ list, addItem, pickItem }) => ({
+const mapStateToProps = ({ list, addItem, pickItem, isFetchingList }) => ({
   list,
   addItem,
-  pickItem
+  pickItem,
+  isFetchingList
 })
 
 export default withContext(ItemContext, mapStateToProps)(View)

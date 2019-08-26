@@ -1,26 +1,25 @@
 import React from 'react'
 
-function View ({ list, pickItem, addItem }) {
+import Input from './Input'
+
+function View ({ list, pickItem, addItem, isFetchingList }) {
   console.log('View re-rendering')
   return (
     <div>
-      <ul>
-        {list.map((item, index) => (
-          <li key={index}>
-            <a onClick={event => event.preventDefault() || pickItem(index)}>
-              {item}
-            </a>
-          </li>
-        ))}
-      </ul>
-      <input
-        placeholder='Add item'
-        onKeyPress={event =>
-          event.key === 'Enter' &&
-          event.target.value &&
-          addItem(event.target.value)
-        }
-      />
+      {isFetchingList ? (
+        <p>Loading</p>
+      ) : (
+        <ul>
+          {list.map((item, index) => (
+            <li key={index}>
+              <a onClick={event => event.preventDefault() || pickItem(index)}>
+                {item}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+      <Input placeholder='Add item' onPress={addItem} />
     </div>
   )
 }
